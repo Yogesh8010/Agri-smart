@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart Crop Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2 style="color:white;">🌱 AgriSmart</h2>
+        <div>
+            <a href="/">Home</a>
+      <a href="/scanner">Scanner</a>
+      <a href="/recommendation">Recommendation</a>
+      <a href="/fertilizer">Fertilizer</a>
+      <a href="/chatbot">Chatbot</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Scanner Hero Section -->
+    <section class="hero" style="background: url('{{ url_for('static', filename='images/scanner-bg.jpg') }}') no-repeat center center/cover;">
+        <h1>📸 Crop Disease Scanner</h1>
+        <p>Upload a crop image and let AI analyze its health</p>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-container">
+        <form action="/scanner" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit" class="btn">Scan Now</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result-box">
+                <h3>🔍 Result: {{ prediction }}</h3>
+                <p>Confidence: {{ confidence }}%</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 AgriSmart | Developed by Team AgriSmart</p>
+    </footer>
+
+</body>
+</html>

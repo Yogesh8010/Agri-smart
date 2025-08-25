@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart - Smart Farming Solution</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>🌱 AgriSmart</h2>
+        <div>
+            <a href="/">Home</a>
+      <a href="/scanner">Scanner</a>
+      <a href="/recommendation">Recommendation</a>
+      <a href="/fertilizer">Fertilizer</a>
+      <a href="/chatbot">Chatbot</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero" style="background-image: url('{{ url_for('static', filename='images/farm_hero.jpg') }}');">
+        <h1>Welcome to AgriSmart</h1>
+        <p>AI Powered Smart Farming: Crop Recommendation, Disease Scanner & Intelligent Chatbot</p>
+        <a href="recommendation" class="btn">Get Started</a>
+    </div>
+
+    <!-- Features Section -->
+    <section style="padding: 60px 20px; text-align: center;">
+        <h2 style="color:#2e7d32; margin-bottom:30px;">Our Features</h2>
+        <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:25px;">
+            
+            <div class="card" style="width:300px;">
+                <img src="{{ url_for('static', filename='images/crop.jpg') }}" alt="Crop Recommendation" style="width:100%; border-radius:10px;">
+                <h3 style="margin:15px 0; color:#2e7d32;">Crop Recommendation</h3>
+                <p>Get AI-powered suggestions for the best crops based on soil nutrients & weather conditions.</p>
+                <a href="/recommendation" class="btn">Try Now</a>
+            </div>
+
+            <div class="card" style="width:300px;">
+                <img src="{{ url_for('static', filename='images/scanner.jpg') }}" alt="Crop Scanner" style="width:100%; border-radius:10px;">
+                <h3 style="margin:15px 0; color:#2e7d32;">Disease Scanner</h3>
+                <p>Upload plant images & detect crop health issues instantly with our AI-powered scanner.</p>
+                <a href="/scanner" class="btn">Scan Now</a>
+            </div>
+
+            <div class="card" style="width:300px;">
+                <img src="{{ url_for('static', filename='images/chatbot.jpg') }}" alt="Chatbot" style="width:100%; border-radius:10px;">
+                <h3 style="margin:15px 0; color:#2e7d32;">Agri Chatbot</h3>
+                <p>Ask farming questions and get instant AI-based assistance, with voice-enabled answers.</p>
+                <a href="/chatbot" class="btn">Chat Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section style="padding: 60px 20px; background:#f0f9f2; text-align:center;">
+        <h2 style="color:#2e7d32; margin-bottom:20px;">About AgriSmart</h2>
+        <p style="max-width:800px; margin:auto; font-size:18px;">
+            AgriSmart is a next-generation farming assistant designed to empower farmers with AI-powered solutions. 
+            From intelligent crop recommendations to disease detection and chatbot assistance, 
+            AgriSmart aims to revolutionize agriculture with smart technology.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🌱 AgriSmart | Smart Farming for a Better Tomorrow</p>
+        <p>
+            <a href="/" style="color:white;">Home</a> |
+            <a href="/recommend" style="color:white;">Recommendation</a> |
+            <a href="/scanner" style="color:white;">Scanner</a> |
+            <a href="/chatbot" style="color:white;">Chatbot</a> |
+            <a href="/contact" style="color:white;">Contact</a>
+        </p>
+    </footer>
+
+</body>
+</html>

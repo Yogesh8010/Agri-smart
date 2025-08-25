@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Recommendation - AgriSmart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>🌱 AgriSmart</h1>
+    <ul>
+      <a href="/">Home</a>
+      <a href="/scanner">Scanner</a>
+      <a href="/recommendation">Recommendation</a>
+      <a href="/fertilizer">Fertilizer</a>
+      <a href="/chatbot">Chatbot</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>Crop Recommendation</h2>
+    <p>Get the best crop suggestion based on soil nutrients</p>
+  </section>
+
+  <section class="features">
+    <form method="POST">
+      <input type="number" name="nitrogen" placeholder="Nitrogen Level" required>
+      <input type="number" name="phosphorus" placeholder="Phosphorus Level" required>
+      <input type="number" name="potassium" placeholder="Potassium Level" required>
+      <button type="submit" class="btn">Get Recommendation</button>
+    </form>
+  </section>
+</body>
+</html>

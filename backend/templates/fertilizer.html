@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart Fertilizer Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2 style="color:white;">🌱 AgriSmart</h2>
+        <div>
+             <a href="/">Home</a>
+      <a href="/scanner">Scanner</a>
+      <a href="/recommendation">Recommendation</a>
+      <a href="/fertilizer">Fertilizer</a>
+      <a href="/chatbot">Chatbot</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: url('{{ url_for('static', filename='images/fertilizer-bg.jpg') }}') no-repeat center center/cover;">
+        <h1>🌾 Fertilizer Recommendation</h1>
+        <p>Get the best fertilizer suggestion based on your soil nutrients</p>
+    </section>
+
+    <!-- Fertilizer Form -->
+    <section class="form-container">
+        <form action="/fertilizer" method="POST" class="fertilizer-form">
+            <div class="form-group">
+                <label for="nitrogen">🌿 Nitrogen (N)</label>
+                <input type="number" name="nitrogen" placeholder="Enter Nitrogen value" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phosphorus">🌱 Phosphorus (P)</label>
+                <input type="number" name="phosphorus" placeholder="Enter Phosphorus value" required>
+            </div>
+
+            <div class="form-group">
+                <label for="potassium">🌴 Potassium (K)</label>
+                <input type="number" name="potassium" placeholder="Enter Potassium value" required>
+            </div>
+
+            <button type="submit" class="btn">Get Recommendation</button>
+        </form>
+
+        {% if recommendation %}
+            <div class="result-card">
+                <h3>✅ Recommended Fertilizer</h3>
+                <p>{{ recommendation }}</p>
+            </div>
+        {% endif %}
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 AgriSmart | Developed by Team AgriSmart</p>
+    </footer>
+
+</body>
+</html>

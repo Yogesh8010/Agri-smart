@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot - AgriSmart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <h1>🌱 AgriSmart</h1>
+    <ul>
+        <a href="/scanner">Scanner</a></li>
+        <a href="/recommendation">Recommendation</a></li>
+        <a href="/fertilizer">Fertilizer</a></li>
+        <a href="/chatbot">Chatbot</a></li>
+        <a href="/about">About</a></li>
+       <a href="/contact">Contact</a></li>
+       <a href="/">Home</a></li>
+    </ul>
+  </nav>
+  <!-- Chatbot Section -->
+    <section class="hero" style="background: url('{{ url_for('static', filename='images/bot1.jpeg') }}') no-repeat center center/cover;">
+        <h1>🤖 Farming Chatbot</h1>
+        <p>Ask anything about farming, crops, weather & fertilizers</p>
+    </section>
+
+  <section class="hero">
+    <h2>AI Farming Assistant</h2>
+    <p>Ask questions and get smart farming tips with voice support 🎙️</p>
+  </section>
+
+  <div class="chat-container">
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Type your question here...">
+    <button onclick="sendMessage()" class="btn">Send</button>
+    <button onclick="startVoice()" class="btn">🎤 Speak</button>
+  </div>
+</body>
+</html>

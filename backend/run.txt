@@ -1,0 +1,10 @@
+cd "C:\Users\hp\OneDrive\New folder\OneDrive\Desktop\py\agrismart\backend"
+
+
+venv\Scripts\activate
+
+python app.py
+
+
+$env:FLASK_APP = "app.py"
+flask run
