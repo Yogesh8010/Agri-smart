@@ -4,7 +4,7 @@ from model import predict_image
 from chatbot import get_response
 
 app = Flask(__name__)
-UPLOAD_FOLDER = "backend/static/uploads"
+UPLOAD_FOLDER = "/tmp"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
